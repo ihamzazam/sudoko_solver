@@ -24,3 +24,9 @@ def print_board(bo):
 
 
 print_board(board)
+
+    def find-empty(board)
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if board[i][j] == 0;
+                    return(i, j)
