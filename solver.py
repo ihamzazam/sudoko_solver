@@ -13,7 +13,7 @@ board = [
 def print_board(bo):
     for i in range(len(bo)): # iteration through the 2D list
         if i % 3 == 0 and i != 0: # prints lines after every 3 rows
-            print("- - - - - - - - - - - - -")
+             print("- - - - - - - - - - - -")
         for j in range(len(bo[0])): # take the range of the first element as reference
             if j % 3 == 0 and j != 0: # prints borders after every 3 columns
                 print(" | ", end="")
