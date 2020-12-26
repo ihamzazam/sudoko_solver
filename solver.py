@@ -24,10 +24,10 @@ def print_board(bo):
 
                 
 def find_empty(board):
-    for i in range(len(board)):
-        for j in range(len(board[0])):
-            if board[i][j] == 0:
-                return(i, j)
+    for i in range(len(board)): #loop through rows
+        for j in range(len(board[0])): #loop through column
+            if board[i][j] == 0: #checking if the position is zero
+                return(i, j) #return the empty (row,col)
     return None
 
 def validity(board, num, pos):
@@ -50,4 +50,23 @@ def validity(board, num, pos):
             if board[i][j] == num and (i, j) != pos: # check the box for same number excluding the pos
                 return False
     return True
+
+def solve(board): #use of backtrack algorithm
+    find = find_empty(board) #check for empty strings  
+    if not find:
+        return true #we have found the solution
+    else:
+        row, col = find
+    for i in  range (1, 10): #loop through values 1 to 9
+        if valid(bo, i, (row, col)): #check if the values are valid in the spcific (row,col)
+            bo[row][col] = i #if the values are valid then they will be insert here
+                if solve(board): #solving board by calling the function recursively
+                    return true
+                bo[row][col]= 0  #condition when false, will rest the lop values and try new values
+    return false
+        
+print_board(board)
+solve(board)
+print("________________________")
+print_board(board)
 
