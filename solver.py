@@ -52,21 +52,21 @@ def validity(board, num, pos):
     return True
 
 def solve(board): #use of backtrack algorithm
+    
     find = find_empty(board) #check for empty strings  
     if not find:
-        return true #we have found the solution
+        return True  #we have found the solution
     else:
         row, col = find
     for i in  range (1, 10): #loop through values 1 to 9
-        if valid(bo, i, (row, col)): #check if the values are valid in the spcific (row,col)
-            bo[row][col] = i #if the values are valid then they will be insert here
-                if solve(board): #solving board by calling the function recursively
-                    return true
+        if validity(board, i, (row, col)): #check if the values are valid in the spcific (row,col)
+            board[row][col] = i #if the values are valid then they will be insert here
+            if solve(board): #solving board by calling the function recursively
+                return True
                 bo[row][col]= 0  #condition when false, will rest the lop values and try new values
-    return false
+    return False
         
 print_board(board)
 solve(board)
 print("________________________")
 print_board(board)
-
