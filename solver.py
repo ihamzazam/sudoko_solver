@@ -68,5 +68,6 @@ def solve(board): #use of backtrack algorithm
         
 print_board(board)
 solve(board)
-print("________________________")
+print("_______________________")
+print()
 print_board(board)
